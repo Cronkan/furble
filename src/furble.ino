@@ -26,7 +26,7 @@ class AdvertisedCallback : public NimBLEAdvertisedDeviceCallbacks
 static void remote_control(Furble::Device *device)
 {
   Serial.println("Remote Control");
-  // M5.Axp.ScreenBreath(BRIGHTNESS_SHUTTER);
+  m5.Lcd.setBrightness(BRIGHTNESS_SHUTTER);
   ez.msgBox("Remote Shutter", "Shutter Control: A\nBack: B", "", false);
   while (true)
   {
@@ -48,8 +48,7 @@ static void remote_control(Furble::Device *device)
 
     delay(50);
   }
-
-  // M5.Axp.ScreenBreath(BRIGHTNESS_DEFAULT);
+  m5.Lcd.setBrightness(BRIGHTNESS_DEFAULT);
 }
 
 /**
